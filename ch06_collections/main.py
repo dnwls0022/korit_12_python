@@ -402,3 +402,128 @@ for i in range(n):
 
 print(f'입력 받은 숫자는 {li_original}입니다.')
 print(f'입력받은 숫자들 중 짝수는 {li_even}입니다.')
+
+'''
+딕셔너리 기반의 연락처 관리
+
+사용자로부터 3 명의 이름과 전화번호를 입력 받아 딕셔너리에 저장한 뒤, 입력한 정보를 추출하는
+프로그램을 작성하시오.
+
+실행 예
+1 번째 사람의 이름의 입력하세요 >>> 김일
+1 번째 사람의 연락처를 입력하세요 >>> 010-1234-5678
+2 번째 사람의 이름의 입력하세요 >>> 김이
+2 번째 사람의 연락처를 입력하세요 >>> 010-2345-6789
+3 번째 사람의 이름의 입력하세요 >>> 김삼
+3 번째 사람의 연락처를 입력하세요 >>> 010-3456-7890
+
+입력 받은 연락처는 {'김일':'010-1234-5678', '김이':'010-2345-6789', '김삼':'010-3456-7890'}입니다.
+'''
+phones={}
+num_of_people =3
+for i in range(num_of_people):
+    dict_key = input(f'{i+1}번째 사람의 이름입력')
+    dict_value = input(f'{i+1}번째 사람의 연락처입력')
+phones[dict_key] = dict_value
+print(f'입력 받은 연락처는 {phones}입니다.')
+
+
+'''
+숫자를 입력한 횟수만큼 비어있는 list에 숫자를 추가하기
+문제 : 비어있는 numbers1을 선언하고, 그 안에 입력 받은 횟수만큼 숫자를 추가하시오.
+
+함수 정의 : add_numbers()....
+매개 변수 : 정수 n
+
+함수 호출
+add_numbers1(last_num)          # call2() 유형
+print(add_numbers2(last_num))   # call4() 유형
+
+실행 예
+숫자 몇 까지 입력하시겠습니까? >>> 10
+[1,2,3,4,5,6,7,8,9,10]
+[1,2,3,4,5,6,7,8,9,10]
+'''
+# 매개변수n을갖는 함수 정의 : add_numbers()...
+def add_numbers1(n):
+    numbers = []
+
+    #for문
+    for i in range(n):
+        numbers.append(i)
+    print(numbers)
+    # call2유형
+# 프롬포트
+last_num = int(input('숫자 몇 까지 입력하시겠습니까? >>>'))
+add_numbers1(last_num)
+
+
+
+#call4유형
+def add_numbers2(n):
+    last_num2 = []
+    for i in range(1, n+1):
+        last_num2.append(i)
+    return last_num2
+print(f'{add_numbers2(last_num)} 결과값을 가집니다.')
+
+
+
+'''
+예를 들어 hello = ['안', '녕', '하', '세', '요']라는 list가 있다고 가정했을 때,
+add_numbers3(10, hello)를 호출하면
+[1,2,3,4,5,6,7,8,9,10,'안','녕','하','세','요']
+라는 결과값을 만드는 함수를 정의한다면 어떻게 할 수 있을지 고민해보세요.
+'''
+def add_numbers3(n,temp_list):
+    numbers = []
+    for i in range(n):
+        numbers.append(i+1)
+    for letter in temp_list:
+        numbers.append(letter)
+    print(numbers)
+
+
+
+
+def add_numbers4(n, temp_list):
+    for i in range(n):
+        temp_list.insert(i, i+1)
+    print(temp_list)
+
+
+add_numbers3(10, ["안","녕"])
+add_numbers4(20,['하','이'])
+
+
+
+'''
+짝수와 홀수의 개수 세기
+
+list를 입력 받아 짝수와 홀수의 개수를 세는 함수를 작성하시오.
+
+함수 정의
+함수 이름 : count_even_odd
+매개변수 : list인 numbers(요소는 모두 정수일 것)
+
+함수 호출
+count_even_odd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+실행 예
+짝수의 개수 : 5개
+홀수의 개수 : 5개
+'''
+def count_even_odd1(numbers):
+    even_num = 0
+    odd_num = 0
+
+    for number in numbers:
+        if number % 2 == 0:
+            even_num += 1
+        else:
+            odd_num += 1
+
+    print(f'짝수의 개수 :{even_num}')
+    print(f'홀수의 개수 :{odd_num}')
+
+count_even_odd1([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
