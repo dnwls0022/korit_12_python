@@ -3,6 +3,7 @@
 1. 슈퍼 클래스 Shape를 정의하시오.
     - 생성자에 name을 인스턴스 변수로 설정
     - draw() 메서드를 정의하여 self.name을 출력하시오(call1() 유형)
+    - area() 메서드를 정의
 2. Shape 클래스를 상속 받는 서브 클래스 Circle을 정의하시오.
     - Circle은 radius(반지름) 속성을 추가로 가집니다.
     - 생성자에서 radius도 추가할 것.

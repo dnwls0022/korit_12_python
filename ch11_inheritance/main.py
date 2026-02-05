@@ -13,7 +13,7 @@ class 서브클래스(슈퍼클래스)
 '''
 import math
 
-
+# 1. 호그와트
 #Person클래스정의
 class Person:
     #이름을받기위한 생성자정의 인스턴수변수 name
@@ -103,6 +103,7 @@ print(isinstance(person1,Person))#결과값 트루
 print(issubclass(Student,Person)) #결과값 트루 객체안만들고 클래스간의 위계만 확인하고싶을떄 쓸 수 있다. Person의 자식설계도이다.
 
 '''
+2번쨰 차 충전문제
 3. 다음 지시 사항을 읽고 Hybrid 클래스를 구현하시오.지시사항밑에
 1. 다음과 같은 슈퍼 클래스 Car를 가지고 있는 Hybrid 클래스를 구현하시오.
 2. 서브 클래스 Hybrid는 다음과 같은 특징을 지니고 있습니다.
@@ -170,40 +171,54 @@ car.add_oil(100)
 car.charge(50)
 car.hybrid_info()
 '''
-원 문제
+3번째 .원 문제
 '''
+#슈퍼클래스정의 shape
 class Shape:
+    # 기본생성자 name인스턴스변수로 설정 name 빌려서쓸것임 중요
     def __init__(self,name):
         self.name = name
-
+    # draw메서드정의 서브클래스에서 계속빌려서쓸것임 중요
     def draw(self):
         print(f'모양은{self.name}입니다')
+    def area(self): #로직은없지만 해두게되면 자식클래스들이 동일한 메서드를 오버라이드할수있음
+        pass
 
-
-
+# 서브클래스 Circle정의하고 shape를 부모로받는다.
 class Circle(Shape):
+    # 위에서 이름을 가져오고 radius를 추가로가진다.
     def __init__(self,name,radius):
         super().__init__(name)
         self.radius = (radius)
         print(f'반지름이{self.radius}인 {self.name}이 생성되었습니다.')
+    #  area() 메서드를 정의하여 원의 넓이를 계산하고 return 할 것. -> call3()
+    #         (넓이 = 3.14 * radius * radius)
+    #부모 shape에서 area을 가져온다 그리고 재정의한다.
     def area(self):
         #call3유형 매개변수X, 리턴O (계산 결과만 전달)
         result = 3.14 * self.radius * self.radius
         return result
+    #4. Circle과 Rectangle의 draw() 메서드를 오버라이딩하여 각각의 넓이를 출력할 것.
+    # 부모의 드로우를 가져온다 그리고 재정의한다
     def draw(self):
         print(f'이름이 {self.name}인  원의 넓이는 {self.area()}입니다')
 
-
+# Shape 클래스를 상속 받는 서브 클래스 Rectangle을 정의
 class Rectangle(Shape):
+    # name을 가져오고  - Rectangle은 width(너비) / height(높이) 속성을 추가로 가집니다.
     def __init__(self,name,height,width):
         super().__init__(name)
         self.height = height
         self.width = width
         print(f'너비가{self.height}인 높이{self.width}이 {self.name}이 생성되었습니다.')
+    # area() 메서드를 정의하여 사각형의 넓이를 계산하고 return 할 것 -> call3()
+    #    (넓이 = 너비 * 높이)
     def area(self):
         #width(너비) / height(높이)
         result = (self.height * self.width)
         return result
+    #4. Circle과 Rectangle의 draw() 메서드를 오버라이딩하여 각각의 넓이를 출력할 것.
+    # 부모로직은 호출안하고 내가 재정의한것만 사용하겟다
     def draw(self):
         print(f'이름이 {self.name}인  직사각형의 넓이는 {self.area()}입니다')
 
