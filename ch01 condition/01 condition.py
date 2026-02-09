@@ -7,6 +7,9 @@
 
 
 '''
+int = 0
+isinstance()
+insage = 20
 # 들여쓰기 콜론 기준엔터치기
 # 줄이같으면 오류
 age= int(input('나이입력>>'))

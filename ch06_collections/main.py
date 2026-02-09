@@ -438,7 +438,11 @@ print(f'입력 받은 연락처는 {phones}입니다.')
 함수 호출
 add_numbers1(last_num)          # call2() 유형
 print(add_numbers2(last_num))   # call4() 유형
-
+# ddddd아나나나난
+'''
+'''
+'''
+'''
 실행 예
 숫자 몇 까지 입력하시겠습니까? >>> 10
 [1,2,3,4,5,6,7,8,9,10]

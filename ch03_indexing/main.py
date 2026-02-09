@@ -1,12 +1,12 @@
 str_example = 'Hello World'
-print(str_example[0])
+'''print(str_example[0])
 print(str_example[1])
 print(str_example[2])
 print(str_example[3])
 print(str_example[4])
 print(str_example[5])
 print(str_example[6])
-
+'''
 print(len(str_example))
 
 '''
@@ -18,8 +18,7 @@ len() : 반복 가능 객체의 전체 인덱스 값을 return하는 함수
 #일반 for문으로 'Hello World'한줄 출력
 # for i in range(10):
 #     print(i+1)향상된 for문의 파이썬형식 !!!!!!!!
-for letter in str_example:
-    print(letter)
+
 
 for letter in str_example:
     print(letter, end="")
